@@ -4,7 +4,7 @@ I'm an AI Expert and AI Researcher with a passion for advancing technology in Na
 
 I recently completed my Master's degree in Computer Science (Bioinformatics) from Alzahra University. My thesis focused on predicting circRNA-RBP binding using graph neural networks.
 
-Currently, I work as an AI Expert at Amesha, where I implement and fine-tune large language models (LLMs) including hami and medguard variants, and execute advanced prompt engineering techniques to enhance model performance.
+Currently, I work as an AI Expert and Researcher at Amesha, where I'm pursuing research initiatives, focusing on: developing novel architectures for multilingual large language models, and execute advanced prompt engineering techniques to enhance model performance.
 
 I also serve as a lecturer in Computer Science at the Iranian Cambridge School, sharing my knowledge and experience with the next generation of AI enthusiasts.
 
