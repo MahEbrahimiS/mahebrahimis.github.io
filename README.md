@@ -8,7 +8,7 @@ Currently, I work as an AI Expert at Amesha, where I implement and fine-tune lar
 
 I also serve as a lecturer in Computer Science at the Iranian Cambridge School, sharing my knowledge and experience with the next generation of AI enthusiasts.
 
-[Email](mailto:mahdieh.ebrahimii@gmail.com) / [CV](#)  / [Twitter](https://twitter.com/your-twitter-handle) / [GitHub](https://github.com/MahEbrahimiS) / [LinkedIn](https://www.linkedin.com/in/mahdieh-ebrahimi)
+[Email](mailto:mahdieh.ebrahimii@gmail.com) / [CV](https://drive.google.com/file/d/1_c5EyfDs2XvDQl0zPvu8yI_9c1D1uwA2/view?usp=sharing)  / [Twitter](https://twitter.com/your-twitter-handle) / [GitHub](https://github.com/MahEbrahimiS) / [LinkedIn](https://www.linkedin.com/in/mahdieh-ebrahimi)
 
 ---
 ## Research Interests
