@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahdieh Ebrahimi - AI Expert & Researcher</title>
-    <!-- Add Font Awesome for better icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #2b3945;
-            --accent-color: #64ffda;
-            --text-color: #8892b0;
-            --heading-color: #ccd6f6;
-            --background: #0a192f;
-            --card-background: #112240;
+            --text: #2c3e50;
+            --background: #ffffff;
+            --accent: #3498db;
+            --muted: #718096;
+            --border: #e2e8f0;
         }
         
         * {
@@ -23,225 +21,165 @@
         }
         
         body {
-            font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            color: var(--text);
             background: var(--background);
-            color: var(--text-color);
-        }
-
-        .container {
-            max-width: 1200px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem;
         }
 
-        header {
-            padding: 4rem 0;
-            position: relative;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        .profile-container {
+        .profile {
             display: flex;
             align-items: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 15px;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
             object-fit: cover;
-            border: 3px solid var(--accent-color);
-            transition: transform 0.3s ease;
         }
 
-        .profile-image:hover {
-            transform: translateY(-5px);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--heading-color);
-            margin-bottom: 1rem;
+        .profile-info h1 {
+            font-size: 1.8rem;
             font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
+        .profile-info p {
+            color: var(--muted);
+            margin-bottom: 1rem;
         }
 
-        .social-links {
+        .links {
             display: flex;
             gap: 1rem;
-            margin: 2rem 0;
+            flex-wrap: wrap;
         }
 
-        .social-links a {
-            color: var(--heading-color);
+        .links a {
+            color: var(--text);
             text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--accent-color);
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9rem;
+            padding: 0.4rem 0;
+            margin-right: 1rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
         }
 
-        .social-links a:hover {
-            background: rgba(100, 255, 218, 0.1);
-            transform: translateY(-3px);
-        }
-
-        main {
-            padding: 2rem 0;
+        .links a:hover {
+            border-bottom-color: var(--accent);
         }
 
         section {
-            margin-bottom: 4rem;
-            background: var(--card-background);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-            transition: transform 0.3s ease;
+            margin: 3rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        section:hover {
-            transform: translateY(-5px);
+        section:last-child {
+            border-bottom: none;
         }
 
         h2 {
-            color: var(--heading-color);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        h2::before {
-            content: '';
-            display: inline-block;
-            width: 30px;
-            height: 2px;
-            background: var(--accent-color);
-        }
-
-        .interests {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .interest-item {
-            background: rgba(100, 255, 218, 0.05);
-            padding: 1rem;
-            border-radius: 5px;
-            border: 1px solid var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
         }
 
         p {
             margin-bottom: 1rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            color: var(--muted);
         }
 
-        @media (max-width: 768px) {
-            .profile-container {
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .interest-tag {
+            background: #f7fafc;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem;
+            }
+
+            .profile {
                 flex-direction: column;
                 text-align: center;
+                gap: 1.5rem;
             }
-            
-            .social-links {
+
+            .links {
                 justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .profile-image {
-                width: 200px;
-                height: 200px;
             }
         }
 
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
         }
-
-        section {
-            animation: fadeIn 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.3s; }
-        section:nth-child(3) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile-container">
-                <img src="profile.jpeg" alt="Mahdieh Ebrahimi" class="profile-image">
-                <div>
-                    <h1>Mahdieh Ebrahimi</h1>
-                    <div class="subtitle">AI Expert & Researcher</div>
-                    <div class="social-links">
-                        <a href="mailto:mahdieh.ebrahimii@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-                        <a href="https://drive.google.com/file/d/1_c5EyfDs2XvDQl0zPvu8yI_9c1D1uwA2/view?usp=sharing" target="_blank">
-                            <i class="fas fa-file-alt"></i> CV
-                        </a>
-                        <a href="https://github.com/MahEbrahimiS" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/mahdieh-ebrahimi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    </div>
-                </div>
+    <div class="profile">
+        <img src="profile.jpeg" alt="Mahdieh Ebrahimi" class="profile-image">
+        <div class="profile-info">
+            <h1>Mahdieh Ebrahimi</h1>
+            <p>AI Expert & Researcher</p>
+            <div class="links">
+                <a href="mailto:mahdieh.ebrahimii@gmail.com">Email</a>
+                <a href="https://drive.google.com/file/d/1_c5EyfDs2XvDQl0zPvu8yI_9c1D1uwA2/view?usp=sharing" target="_blank">CV</a>
+                <a href="https://github.com/MahEbrahimiS" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/mahdieh-ebrahimi" target="_blank">LinkedIn</a>
             </div>
-        </header>
-
-        <main>
-            <section>
-                <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <p>I'm an AI Expert and AI Researcher with a passion for advancing technology in Natural Language Processing (NLP), Large Language Models (LLMs), and Artificial Intelligence (AI).</p>
-                <p>I recently completed my Master's degree in Computer Science (Bioinformatics) from Alzahra University. My thesis focused on predicting circRNA-RBP binding using graph neural networks.</p>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-briefcase"></i> Current Work</h2>
-                <p>Currently, I work as an AI Expert at Amesha, where I implement and fine-tune large language models (LLMs) including hami and medguard variants, and execute advanced prompt engineering techniques to enhance model performance.</p>
-                <p>I also serve as a lecturer in Computer Science at the Iranian Cambridge School, sharing my knowledge and experience with the next generation of AI enthusiasts.</p>
-            </section>
-
-            <section>
-                <h2><i class="fas fa-microscope"></i> Research Interests</h2>
-                <div class="interests">
-                    <div class="interest-item">
-                        <h3><i class="fas fa-comments"></i> Natural Language Processing (NLP)</h3>
-                    </div>
-                    <div class="interest-item">
-                        <h3><i class="fas fa-brain"></i> Large Language Models (LLMs)</h3>
-                    </div>
-                    <div class="interest-item">
-                        <h3><i class="fas fa-project-diagram"></i> Graph Neural Networks (GNN)</h3>
-                    </div>
-                    <div class="interest-item">
-                        <h3><i class="fas fa-robot"></i> Artificial Intelligence</h3>
-                    </div>
-                    <div class="interest-item">
-                        <h3><i class="fas fa-cogs"></i> Machine Learning</h3>
-                    </div>
-                </div>
-            </section>
-        </main>
+        </div>
     </div>
+
+    <section>
+        <h2>About</h2>
+        <p>I'm an AI Expert and AI Researcher focusing on Natural Language Processing (NLP), Large Language Models (LLMs), and Artificial Intelligence. I recently completed my Master's degree in Computer Science (Bioinformatics) from Alzahra University, where my thesis explored predicting circRNA-RBP binding using graph neural networks.</p>
+    </section>
+
+    <section>
+        <h2>Current Work</h2>
+        <p>At Amesha, I implement and fine-tune large language models including hami and medguard variants, applying advanced prompt engineering techniques to enhance model performance.</p>
+        <p>I also serve as a lecturer in Computer Science at the Iranian Cambridge School, sharing my knowledge with the next generation of AI enthusiasts.</p>
+    </section>
+
+    <section>
+        <h2>Research Interests</h2>
+        <div class="interests">
+            <span class="interest-tag">Natural Language Processing</span>
+            <span class="interest-tag">Large Language Models</span>
+            <span class="interest-tag">Graph Neural Networks</span>
+            <span class="interest-tag">Artificial Intelligence</span>
+            <span class="interest-tag">Machine Learning</span>
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Mahdieh Ebrahimi
+    </footer>
 </body>
 </html>
