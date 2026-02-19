@@ -1,187 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdieh Ebrahimi - AI Researcher & Machine Learning Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahdieh Ebrahimi — Junior AI Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        :root {
-            --text: #2c3e50;
-            --background: #ffffff;
-            --accent: #3498db;
-            --muted: #718096;
-            --border: #e2e8f0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--background);
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+  <style>
+    :root{
+      --text:#111827;
+      --bg:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --tagbg:#f3f4f6;
+      --card:#ffffff;
+      --shadow: 0 10px 30px rgba(17,24,39,.06);
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.65;
+      color:var(--text);
+      background:var(--bg);
+      max-width:860px;
+      margin:0 auto;
+      padding:2.2rem;
+    }
 
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+    img{max-width:100%;height:auto}
 
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 60px;
-            object-fit: cover;
-        }
+    /* Header */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:1rem;
+      margin-bottom:1.2rem;
+    }
 
-        .profile-info h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
+    .lang-toggle{
+      display:flex;
+      gap:.5rem;
+      align-items:center;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:.25rem;
+      background:#fff;
+      box-shadow: 0 2px 10px rgba(17,24,39,.04);
+    }
+    .lang-toggle button{
+      border:none;
+      background:transparent;
+      padding:.45rem .8rem;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:.9rem;
+      color:var(--muted);
+      transition: background .15s ease, color .15s ease;
+      white-space:nowrap;
+    }
+    .lang-toggle button.active{
+      background:var(--accent);
+      color:#fff;
+    }
 
-        .profile-info p {
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:1.8rem;
+      margin-bottom:1.4rem;
+    }
+    .profile-image{
+      width:112px;
+      height:112px;
+      border-radius:999px;
+      object-fit:cover;
+      border:1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(17,24,39,.08);
+    }
 
-        .links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+    .profile-info h1{
+      font-size:2rem;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      margin-bottom:.35rem;
+    }
+    .profile-info .role{
+      color:var(--muted);
+      font-size:1.02rem;
+      margin-bottom:.8rem;
+    }
 
-        .links a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.4rem 0;
-            margin-right: 1rem;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s ease;
-        }
+    .quick{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin-bottom:.95rem;
+    }
+    .pill{
+      background:var(--tagbg);
+      border:1px solid var(--border);
+      padding:.28rem .62rem;
+      border-radius:999px;
+      font-size:.86rem;
+      color:var(--muted);
+    }
 
-        .links a:hover {
-            border-bottom-color: var(--accent);
-        }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      align-items:center;
+      margin-top:.2rem;
+    }
 
-        section {
-            margin: 3rem 0;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-        }
+    .btn{
+      display:inline-flex;
+      gap:.5rem;
+      align-items:center;
+      text-decoration:none;
+      border:1px solid var(--border);
+      background:#fff;
+      padding:.55rem .85rem;
+      border-radius:12px;
+      color:var(--text);
+      font-size:.95rem;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, color .15s ease;
+      box-shadow: 0 4px 14px rgba(17,24,39,.06);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(37,99,235,.35);
+      box-shadow: 0 10px 26px rgba(37,99,235,.12);
+      color: var(--accent);
+    }
+    .btn.primary{
+      background: var(--accent);
+      color:#fff;
+      border-color: transparent;
+      box-shadow: 0 10px 26px rgba(37,99,235,.22);
+    }
+    .btn.primary:hover{
+      color:#fff;
+      box-shadow: 0 14px 34px rgba(37,99,235,.28);
+    }
 
-        section:last-child {
-            border-bottom: none;
-        }
+    .links{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-top:.2rem;
+    }
+    .links a{
+      color:var(--text);
+      text-decoration:none;
+      font-size:.95rem;
+      padding:.15rem 0;
+      border-bottom:1px solid transparent;
+      transition:border-color .2s ease,color .2s ease;
+    }
+    .links a:hover{
+      border-bottom-color:var(--accent);
+      color:var(--accent);
+    }
 
-        h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text);
-        }
+    hr.sep{
+      border:none;
+      border-top:1px solid var(--border);
+      margin: 1.35rem 0 1.4rem;
+    }
 
-        p {
-            margin-bottom: 1rem;
-            color: var(--muted);
-        }
+    section{
+      margin:2.2rem 0;
+      padding-bottom:1.6rem;
+      border-bottom:1px solid var(--border);
+    }
+    section:last-child{border-bottom:none;padding-bottom:0}
 
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
+    h2{
+      font-size:1.15rem;
+      font-weight:800;
+      letter-spacing:-0.01em;
+      margin-bottom:.85rem;
+    }
+    p{margin-bottom:.95rem;color:var(--muted)}
 
-        .interest-tag {
-            background: #f7fafc;
-            padding: 0.4rem 0.8rem;
-            border-radius: 3px;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
+    /* Cards */
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+    .card{
+      padding:1rem;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--card);
+      box-shadow: var(--shadow);
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1.5rem;
-            }
+    /* Experience */
+    .job-header{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:.4rem 1rem;
+      margin-bottom:.35rem;
+    }
+    .job-title{font-weight:800;color:var(--text)}
+    .job-meta{color:var(--muted);font-size:.92rem;white-space:nowrap}
+    .job-company{color:var(--muted);margin-bottom:.45rem}
 
-            .profile {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-            }
+    ul{margin-left:1.05rem;color:var(--muted)}
+    li{margin:.35rem 0}
 
-            .links {
-                justify-content: center;
-            }
-        }
+    /* Projects */
+    .project-top{
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      flex-wrap:wrap;
+      margin-bottom:.45rem;
+      align-items:flex-start;
+    }
+    .project-title{
+      font-weight:800;
+      color:var(--text);
+    }
+    .project-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.4rem;
+    }
+    .tag{
+      background: var(--tagbg);
+      border: 1px solid var(--border);
+      padding: .18rem .55rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .project-links{
+      margin-top:.55rem;
+      display:flex;
+      gap:.9rem;
+      flex-wrap:wrap;
+    }
+    .project-links a{
+      font-size:.92rem;
+      color: var(--accent);
+      text-decoration:none;
+      border-bottom:1px solid rgba(37,99,235,.25);
+    }
+    .project-links a:hover{border-bottom-color: var(--accent)}
 
-        footer {
-            margin-top: 4rem;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-    </style>
+    .interests{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.55rem;
+      margin-top:.5rem;
+    }
+    .interest-tag{
+      background: var(--tagbg);
+      border:1px solid var(--border);
+      padding:.35rem .7rem;
+      border-radius:10px;
+      font-size:.9rem;
+      color: var(--muted);
+    }
+
+    /* Bilingual support */
+    [data-lang] { display:none; }
+    [data-lang].active { display:block; }
+
+    /* Persian RTL tweaks */
+    .rtl{
+      direction: rtl;
+      text-align: right;
+    }
+    .rtl ul{margin-right:1.05rem;margin-left:0}
+    .rtl li{margin:.35rem 0}
+    .rtl .job-meta{white-space:normal}
+    .rtl .project-links{justify-content:flex-end}
+
+    footer{
+      margin-top:3rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    @media (max-width: 640px){
+      body{padding:1.4rem}
+      .topbar{flex-direction:column; align-items:flex-start}
+      .profile{flex-direction:column;text-align:center}
+      .cta-row{justify-content:center}
+      .links{justify-content:center}
+      .quick{justify-content:center}
+      .job-meta{white-space:normal}
+    }
+  </style>
 </head>
+
 <body>
-    <div class="profile">
-        <img src="photo.jpeg" alt="Mahdieh Ebrahimi" class="profile-image">
-        <div class="profile-info">
-            <h1>Mahdieh Ebrahimi</h1>
-            <p>AI Expert & Researcher</p>
-            <div class="links">
-                <a href="mailto:mahdieh.ebrahimii@gmail.com" rel="noopener noreferrer">Email</a>
-                <a href="https://drive.google.com/file/d/1_c5EyfDs2XvDQl0zPvu8yI_9c1D1uwA2/view?usp=sharing" target="_blank" rel="noopener noreferrer">CV</a>
-                <a href="https://github.com/MahEbrahimiS" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/mahdieh-ebrahimi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-        </div>
+  <!-- Top controls -->
+  <div class="topbar">
+    <div class="links">
+      <a href="mailto:mahdieh.ebrahimii@gmail.com" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> <span data-i18n="email">Email</span></a>
+      <a href="https://github.com/MahEbrahimiS" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/mahdieh-ebrahimi" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
 
-    <section>
-        <h2>About</h2>
-        <p>I specialize in Natural Language Processing (NLP), Large Language Models (LLMs), and Artificial Intelligence. I recently earned my Master’s degree in Computer Science (Bioinformatics) from Alzahra University. My research focused on developing predictive models for circRNA-RBP interactions using Graph Neural Networks.</p>
-    </section>
+    <div class="lang-toggle" aria-label="Language toggle">
+      <button id="btn-en" class="active" type="button">English</button>
+      <button id="btn-fa" type="button">فارسی</button>
+    </div>
+  </div>
 
-    <section>
-        <h2>Current Work</h2>
-        <p>As a freelance AI developer, I focus on advancing the boundaries of language model architectures and their applications. I implement sophisticated prompt engineering techniques to enhance model performance and cross-lingual capabilities.</p>
-        <p>I also serve as a lecturer in Computer Science at the Iranian Cambridge School, sharing my knowledge with the next generation of AI enthusiasts.</p>
-    </section>
+  <!-- Header -->
+  <div class="profile">
+    <img src="photo.jpeg" alt="Mahdieh Ebrahimi" class="profile-image" />
+    <div class="profile-info">
+      <h1>Mahdieh Ebrahimi</h1>
 
-    <section>
-        <h2>Research Interests</h2>
-        <div class="interests">
-            <span class="interest-tag">Natural Language Processing</span>
-            <span class="interest-tag">Large Language Models</span>
-            <span class="interest-tag">Graph Neural Networks</span>
-            <span class="interest-tag">Artificial Intelligence</span>
-            <span class="interest-tag">Machine Learning</span>
+      <!-- English -->
+      <p class="role active" data-lang="en">
+        Junior AI Developer • LLMs • RAG • FastAPI • Tehran, Iran
+      </p>
+
+      <!-- Persian -->
+      <p class="role rtl" data-lang="fa">
+        توسعه‌دهنده هوش مصنوعی (جونیور) • مدل‌های زبانی • RAG • FastAPI • تهران، ایران
+      </p>
+
+      <div class="quick">
+        <span class="pill">Python</span>
+        <span class="pill">FastAPI</span>
+        <span class="pill">Transformers</span>
+        <span class="pill">RAG / ChromaDB</span>
+        <span class="pill">Docker</span>
+      </div>
+
+      <div class="cta-row">
+        <!-- IMPORTANT: Replace href with a DIRECT PDF file URL (not Google Drive "view") for true download behavior -->
+        <a class="btn primary" id="downloadBtn"
+           href="https://drive.google.com/uc?export=download&id=1_c5EyfDs2XvDQl0zPvu8yI_9c1D1uwA2"
+           target="_blank" rel="noopener noreferrer" download>
+          <i class="fa-solid fa-download"></i>
+          <span data-lang="en" class="active">Download Resume (PDF)</span>
+          <span data-lang="fa" class="rtl">دانلود رزومه (PDF)</span>
+        </a>
+
+        <a class="btn"
+           href="https://drive.google.com/file/d/1gklKSQi5FZvHlArWxGXSjeJ_8F9u3JXg/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-file"></i>
+          <span data-lang="en" class="active">View Resume</span>
+          <span data-lang="fa" class="rtl">مشاهده رزومه</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="sep" />
+
+  <!-- About -->
+  <section>
+    <h2>
+      <span data-lang="en" class="active">About</span>
+      <span data-lang="fa" class="rtl">درباره من</span>
+    </h2>
+
+    <div data-lang="en" class="active">
+      <p>
+        I build practical AI products focused on <b>LLM applications</b> such as chatbots, Retrieval-Augmented Generation (RAG),
+        and backend APIs in <b>Python/FastAPI</b>. I hold an M.Sc. in Computer Science (Bioinformatics) from Alzahra University,
+        with research on predictive modeling for circRNA–RBP interactions using Graph Neural Networks.
+      </p>
+    </div>
+
+    <div data-lang="fa" class="rtl">
+      <p>
+        روی توسعه محصولات کاربردی هوش مصنوعی با تمرکز بر <b>مدل‌های زبانی</b> کار می‌کنم؛ مثل چت‌بات‌ها، سیستم‌های
+        <b>RAG</b> و پیاده‌سازی بک‌اند با <b>Python/FastAPI</b>. کارشناسی‌ارشد علوم کامپیوتر (بیوانفورماتیک) از دانشگاه الزهرا دارم
+        و در حوزه پیش‌بینی تعامل circRNA–RBP با استفاده از Graph Neural Networks پژوهش کرده‌ام.
+      </p>
+    </div>
+  </section>
+
+  <!-- What I work on -->
+  <section>
+    <h2>
+      <span data-lang="en" class="active">What I Work On</span>
+      <span data-lang="fa" class="rtl">حوزه‌های کاری</span>
+    </h2>
+
+    <div data-lang="en" class="active">
+      <p>
+        Recently I’ve been building LLM-powered systems: prompt-engineered agents, semantic search over documents,
+        and production-ready backends with authentication and Docker deployment.
+      </p>
+    </div>
+
+    <div data-lang="fa" class="rtl">
+      <p>
+        اخیراً روی سیستم‌های مبتنی بر LLM کار کرده‌ام: ایجنت‌های مبتنی بر پرامپت، جستجوی معنایی روی اسناد،
+        و بک‌اندهای آماده استقرار همراه با احراز هویت و دیپلوی با Docker.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>
+      <span data-lang="en" class="active">Selected Projects</span>
+      <span data-lang="fa" class="rtl">پروژه‌های منتخب</span>
+    </h2>
+
+    <div class="grid">
+      <!-- Project 1 -->
+      <div class="card">
+        <div class="project-top">
+          <div>
+            <div class="project-title">
+              <span data-lang="en" class="active">RAG / Graph-RAG Document Search (PDF Semantic Search)</span>
+              <span data-lang="fa" class="rtl">جستجوی معنایی روی PDF با RAG / Graph-RAG</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">Embeddings</span>
+            <span class="tag">RAG</span>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        © 2024 Mahdieh Ebrahimi. All rights reserved.
-    </footer>
+        <div data-lang="en" class="active">
+          <p>
+            Designed and deployed RAG + Graph-RAG pipelines for semantic search over PDFs, improving answer grounding and retrieval relevance.
+          </p>
+          <ul>
+            <li>Chunking + embedding pipelines, vector storage with ChromaDB</li>
+            <li>LLM integration for grounded Q&A over documents</li>
+          </ul>
+        </div>
 
+        <div data-lang="fa" class="rtl">
+          <p>
+            طراحی و پیاده‌سازی پایپ‌لاین‌های RAG و Graph-RAG برای جستجوی معنایی روی PDF و بهبود دقت بازیابی و پاسخ‌دهی.
+          </p>
+          <ul>
+            <li>Chunking و Embedding، ذخیره‌سازی در ChromaDB</li>
+            <li>یکپارچه‌سازی LLM برای پرسش‌وپاسخ مبتنی بر سند</li>
+          </ul>
+        </div>
+
+        <div class="project-links">
+          <!-- Optional: add your repo link(s) if you have them -->
+          <!-- <a href="https://github.com/..." target="_blank" rel="noopener noreferrer">GitHub Repo</a> -->
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card">
+        <div class="project-top">
+          <div>
+            <div class="project-title">
+              <span data-lang="en" class="active">AI Feedback Rewriting Chatbot</span>
+              <span data-lang="fa" class="rtl">چت‌بات بازنویسی بازخورد با هوش مصنوعی</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">LLM APIs</span>
+            <span class="tag">Prompting</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <div data-lang="en" class="active">
+          <p>
+            Built a chatbot to rewrite and standardize user feedback, reducing manual review time by over 50%.
+          </p>
+          <ul>
+            <li>Prompt engineering for clarity, tone, and consistency</li>
+            <li>Backend APIs with auth + containerized deployment</li>
+          </ul>
+        </div>
+
+        <div data-lang="fa" class="rtl">
+          <p>
+            ساخت چت‌بات برای بازنویسی و استانداردسازی بازخورد کاربران که زمان بررسی دستی را بیش از ۵۰٪ کاهش داد.
+          </p>
+          <ul>
+            <li>پرامپت‌نویسی برای شفافیت، لحن و یکپارچگی</li>
+            <li>پیاده‌سازی API با احراز هویت و استقرار Docker</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card">
+        <div class="project-top">
+          <div>
+            <div class="project-title">
+              <span data-lang="en" class="active">Multi-Model Chatbot Integration (GPT / Claude)</span>
+              <span data-lang="fa" class="rtl">یکپارچه‌سازی چت‌بات چندمدلی (GPT / Claude)</span>
+            </div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">APIs</span>
+            <span class="tag">Agents</span>
+          </div>
+        </div>
+
+        <div data-lang="en" class="active">
+          <p>
+            Integrated multiple LLM providers into web applications to enable flexible responses and improved user retention.
+          </p>
+          <ul>
+            <li>Provider routing and prompt templates</li>
+            <li>Agent-style prompting for better task handling</li>
+          </ul>
+        </div>
+
+        <div data-lang="fa" class="rtl">
+          <p>
+            اتصال چند ارائه‌دهنده LLM به وب‌اپلیکیشن‌ها برای پاسخ‌دهی منعطف‌تر و بهبود تجربه کاربر.
+          </p>
+          <ul>
+            <li>مدیریت Providerها و قالب‌های پرامپت</li>
+            <li>پرامپت‌نویسی ایجنت‌محور برای انجام بهتر وظایف</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>
+      <span data-lang="en" class="active">Experience</span>
+      <span data-lang="fa" class="rtl">سوابق کاری</span>
+    </h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="job-header">
+          <div class="job-title">
+            <span data-lang="en" class="active">International Baccalaureate (IB) PYP Teacher</span>
+            <span data-lang="fa" class="rtl">معلم IB (PYP)</span>
+          </div>
+          <div class="job-meta">
+            <span data-lang="en" class="active">Sep 2025 – Present • Full-time • Hybrid</span>
+            <span data-lang="fa" class="rtl">شهریور ۱۴۰۴ – اکنون • تمام‌وقت • هیبرید</span>
+          </div>
+        </div>
+        <div class="job-company">
+          <span data-lang="en" class="active">Shahid Mahdavi Educational Foundation • Tehran</span>
+          <span data-lang="fa" class="rtl">بنیاد آموزشی شهید مهدوی • تهران</span>
+        </div>
+        <ul data-lang="en" class="active">
+          <li>Teaching inquiry-based learning aligned with IB PYP framework.</li>
+          <li>Designed learning activities integrating technology and problem-solving.</li>
+        </ul>
+        <ul data-lang="fa" class="rtl">
+          <li>تدریس مبتنی بر رویکرد پژوهش‌محور مطابق چارچوب IB PYP.</li>
+          <li>طراحی فعالیت‌های آموزشی با تلفیق فناوری و حل مسئله.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-header">
+          <div class="job-title">
+            <span data-lang="en" class="active">Computer Lecturer</span>
+            <span data-lang="fa" class="rtl">مدرس کامپیوتر</span>
+          </div>
+          <div class="job-meta">
+            <span data-lang="en" class="active">Jul 2025 – Dec 2025 • Part-time • Remote</span>
+            <span data-lang="fa" class="rtl">تیر ۱۴۰۴ – آذر ۱۴۰۴ • پاره‌وقت • ریموت</span>
+          </div>
+        </div>
+        <div class="job-company">
+          <span data-lang="en" class="active">Zharfa Institute</span>
+          <span data-lang="fa" class="rtl">موسسه ژرفا</span>
+        </div>
+        <ul data-lang="en" class="active">
+          <li>Delivered lectures and exercises in computer fundamentals and applied programming.</li>
+          <li>Supported learners with project-based learning and structured feedback.</li>
+        </ul>
+        <ul data-lang="fa" class="rtl">
+          <li>تدریس مبانی کامپیوتر و برنامه‌نویسی کاربردی همراه با تمرین.</li>
+          <li>پشتیبانی آموزشی با رویکرد پروژه‌محور و بازخورد ساختارمند.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-header">
+          <div class="job-title">
+            <span data-lang="en" class="active">Lecturer — Computer Science</span>
+            <span data-lang="fa" class="rtl">مدرس علوم کامپیوتر</span>
+          </div>
+          <div class="job-meta">
+            <span data-lang="en" class="active">Sep 2024 – Jul 2025 • Part-time</span>
+            <span data-lang="fa" class="rtl">شهریور ۱۴۰۳ – تیر ۱۴۰۴ • پاره‌وقت</span>
+          </div>
+        </div>
+        <div class="job-company">
+          <span data-lang="en" class="active">Iranian Cambridge School • Tehran</span>
+          <span data-lang="fa" class="rtl">مدرسه کمبریج ایرانی • تهران</span>
+        </div>
+        <ul data-lang="en" class="active">
+          <li>Designed curriculum on web development, AI fundamentals, and design thinking.</li>
+          <li>Mentored AI mini-projects; 80% delivered functional prototypes using Python and Figma.</li>
+        </ul>
+        <ul data-lang="fa" class="rtl">
+          <li>طراحی و تدریس سرفصل‌های توسعه وب، مبانی هوش مصنوعی و تفکر طراحی.</li>
+          <li>منتورینگ پروژه‌های کوچک؛ ۸۰٪ دانش‌آموزان پروتوتایپ‌های قابل اجرا با Python و Figma ساختند.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-header">
+          <div class="job-title">
+            <span data-lang="en" class="active">Freelance AI Developer</span>
+            <span data-lang="fa" class="rtl">توسعه‌دهنده هوش مصنوعی (فریلنس)</span>
+          </div>
+          <div class="job-meta">
+            <span data-lang="en" class="active">2024 – Present</span>
+            <span data-lang="fa" class="rtl">۱۴۰۳ – اکنون</span>
+          </div>
+        </div>
+        <div class="job-company">
+          <span data-lang="en" class="active">Tehran • Remote/Hybrid</span>
+          <span data-lang="fa" class="rtl">تهران • ریموت/هیبرید</span>
+        </div>
+        <ul data-lang="en" class="active">
+          <li>Designed RAG and Graph-RAG pipelines using ChromaDB for semantic search over PDF documents.</li>
+          <li>Built FastAPI backends (auth, model integration, REST APIs) and containerized deployments with Docker.</li>
+          <li>Integrated GPT/Claude APIs and delivered an AI rewriting assistant reducing review time by 50%.</li>
+        </ul>
+        <ul data-lang="fa" class="rtl">
+          <li>طراحی پایپ‌لاین‌های RAG و Graph-RAG با ChromaDB برای جستجوی معنایی روی PDF.</li>
+          <li>پیاده‌سازی بک‌اند FastAPI (احراز هویت، اتصال مدل، REST API) و استقرار با Docker.</li>
+          <li>یکپارچه‌سازی GPT/Claude و ساخت دستیار بازنویسی با کاهش ۵۰٪ زمان بررسی.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="job-header">
+          <div class="job-title">
+            <span data-lang="en" class="active">AI Expert & Researcher</span>
+            <span data-lang="fa" class="rtl">کارشناس و پژوهشگر هوش مصنوعی</span>
+          </div>
+          <div class="job-meta">
+            <span data-lang="en" class="active">Jul 2023 – Jan 2025 • Full-time</span>
+            <span data-lang="fa" class="rtl">تیر ۱۴۰۲ – دی ۱۴۰۳ • تمام‌وقت</span>
+          </div>
+        </div>
+        <div class="job-company">
+          <span data-lang="en" class="active">Amesha • Tehran</span>
+          <span data-lang="fa" class="rtl">آمشا • تهران</span>
+        </div>
+        <ul data-lang="en" class="active">
+          <li>Built and deployed chatbot products (Hami, MedGuard) reaching 3,000+ pilot users.</li>
+          <li>Implemented RAG with ChromaDB and prompt strategies improving accuracy to 92%.</li>
+          <li>Developed scalable Python/FastAPI services and Dockerized production deployments.</li>
+        </ul>
+        <ul data-lang="fa" class="rtl">
+          <li>توسعه و استقرار چت‌بات‌ها (Hami و MedGuard) با بیش از ۳۰۰۰ کاربر پایلوت.</li>
+          <li>پیاده‌سازی RAG با ChromaDB و بهبود دقت تا ۹۲٪ با پرامپت‌نویسی.</li>
+          <li>ساخت سرویس‌های مقیاس‌پذیر Python/FastAPI و استقرار Production با Docker.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests -->
+  <section>
+    <h2>
+      <span data-lang="en" class="active">Interests</span>
+      <span data-lang="fa" class="rtl">علاقه‌مندی‌ها</span>
+    </h2>
+    <div class="interests">
+      <span class="interest-tag">LLMs</span>
+      <span class="interest-tag">NLP</span>
+      <span class="interest-tag">RAG Systems</span>
+      <span class="interest-tag">Transformers</span>
+      <span class="interest-tag">Graph Neural Networks</span>
+      <span class="interest-tag">Applied AI Products</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Mahdieh Ebrahimi. All rights reserved.
+  </footer>
+
+  <script>
+    const btnEn = document.getElementById('btn-en');
+    const btnFa = document.getElementById('btn-fa');
+
+    function setLang(lang){
+      // toggle buttons
+      btnEn.classList.toggle('active', lang === 'en');
+      btnFa.classList.toggle('active', lang === 'fa');
+
+      // show/hide lang blocks
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+      });
+
+      // apply RTL on body for Persian
+      document.body.classList.toggle('rtl', lang === 'fa');
+
+      // store preference
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    btnEn.addEventListener('click', () => setLang('en'));
+    btnFa.addEventListener('click', () => setLang('fa'));
+
+    // init
+    const saved = (() => { try { return localStorage.getItem('lang'); } catch(e){ return null; }})();
+    setLang(saved === 'fa' ? 'fa' : 'en');
+  </script>
 </body>
 </html>
